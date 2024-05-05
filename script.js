@@ -231,7 +231,7 @@ function startquiz(index){
     console.log(currQues);
     let currQuesIndex=0;
     let score=0;
-    let ansSelected=false;
+   // let ansSelected=false;
     let checker=true;
     let ansSelectedArray=[];
     for (let i = 0; i < currQues.length; i++) {
@@ -257,8 +257,8 @@ function startquiz(index){
     const optionElement=document.createElement("div");
     optionElement.textContent=option;
     optionElement.addEventListener("click",()=>{
-if (!ansSelected && ansSelectedArray[currQuesIndex]==0) {
-    ansSelected=true;
+if (ansSelectedArray[currQuesIndex]==0) {
+   // ansSelected=true;
     checker=true;
     ansSelectedArray[currQuesIndex]=1;
 optionElement.classList.add('selected');
@@ -283,8 +283,8 @@ const submitbtn=document.createElement('button');
 submitbtn.textContent='Submit Answer';
 submitbtn.className='submit-answer';
 submitbtn.onclick=()=>{
-    if (!ansSelected && ansSelectedArray[currQuesIndex]==0) {
-        ansSelected=true;
+    if (ansSelectedArray[currQuesIndex]==0) {
+        //ansSelected=true;
         checker=true;
         ansSelectedArray[currQuesIndex]=1;
         checkanswer(inputElem.value.toString(),question.answer.toString());
@@ -329,7 +329,7 @@ if (currQuesIndex>=currQues.length) {
   endquiz();
 }
 else{
-    ansSelected=false;
+    //ansSelected=false;
     checker=true;
     showQuestion();
 }
